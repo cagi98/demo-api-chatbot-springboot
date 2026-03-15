@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: optional:classpath:secrets.yml
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: tinyllama
+  security:
+    user:
+      name: ${test.security.username}
+      password: ${test.security.password}
