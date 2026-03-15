@@ -4,7 +4,7 @@ spring:
   ai:
     ollama:
       init:
-        pull-model-strategy: when_missing
+        pull-model-strategy: never
       chat:
         options:
           model: tinyllama

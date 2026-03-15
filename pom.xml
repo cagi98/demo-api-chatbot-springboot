@@ -135,7 +135,8 @@
 		<testResources>
 			<testResource>
 				<directory>src/test/resources</directory>
-				<filtering>false</filtering> </testResource>
+				<filtering>false</filtering>
+			</testResource>
 		</testResources>
 	</build>
 	<repositories>
