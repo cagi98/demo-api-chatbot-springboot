@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: restapi
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: tinyllama
+      base-url: ${OLLAMA_URL}
+  security:
+    user:
+      name: ${APP_SECURITY_USERNAME}
+      password: ${APP_SECURITY_PASSWORD}
+springdoc:
+  api-docs:
+    path: /api-docs

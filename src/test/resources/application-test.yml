@@ -1,0 +1,13 @@
+spring:
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: tinyllama
+      base-url: ${TEST_OLLAMA_URL}
+  security:
+    user:
+      name: ${TEST_USERNAME}
+      password: ${TEST_PASSWORD}
