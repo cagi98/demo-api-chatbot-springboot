@@ -8,8 +8,8 @@ spring:
 
   security:
     user:
-      name: ${app.security.username}
-      password: ${app.security.password}
+      name: ${app.security.username:}
+      password: ${app.security.password:}
 
   ai:
     ollama:
