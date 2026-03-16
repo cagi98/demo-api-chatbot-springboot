@@ -23,6 +23,12 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http, CustomAuthenticationEntryPoint customAuthenticationEntryPoint, CustomAccessDeniedHandler customAccessDeniedHandler) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
+                        // Whitelist Swagger URLs
+                        .requestMatchers(
+                            "/v3/api-docs/**",   // Required for /v1/api-docs/swagger-config
+                            "/swagger-ui/**",
+                            "/swagger-ui.html"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults())

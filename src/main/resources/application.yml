@@ -18,6 +18,4 @@ spring:
       chat:
         options:
           model: tinyllama
-springdoc:
-  api-docs:
-    path: /api-docs
+      base-url: http://myollamacontainer-resource.epdaewgdc7d2enfu.canadaeast.azurecontainer.io:11434

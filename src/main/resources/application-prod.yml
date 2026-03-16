@@ -3,7 +3,7 @@ spring:
     name: restapi
   ai:
     ollama:
-      base-url: ${OLLAMA_URL}
+      base-url: http://myollamacontainer-resource.epdaewgdc7d2enfu.canadaeast.azurecontainer.io:11434
       init:
         pull-model-strategy: never
       chat:
@@ -13,7 +13,3 @@ spring:
     user:
       name: ${APP_SECURITY_USERNAME}
       password: ${APP_SECURITY_PASSWORD}
-
-springdoc:
-  api-docs:
-    path: /api-docs
