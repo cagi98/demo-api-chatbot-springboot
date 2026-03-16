@@ -7,7 +7,12 @@ Pour la démo, j'utilise `Ollama`, un outil open source pour faire tourner le LL
 
 ## Comment tester ?
 
-Simplement exécuter une requête HTTP `POST` vers `https://sprintboot-api-chatbot-demo.azurewebsites.net/v1/chat` avec :
+Accéder à la documentation de l'API ici: 👉 [Lien vers API Swagger UI doc](https://sprintboot-api-chatbot-demo.azurewebsites.net/swagger-ui/index.html)
+et utiliser `Username: user` et `Password: user123` sur `Authorize`.
+
+OU
+
+Avec par exemple `Postman` exécuter une requête HTTP `POST` vers `https://sprintboot-api-chatbot-demo.azurewebsites.net/v1/chat` avec :
 
 - Une authentification de type basique: utiliser `Username: user` et `Password: user123`
 - Un request body json comme suit:
