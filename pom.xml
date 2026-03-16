@@ -132,6 +132,11 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
+				<includes>
+					<include>**/*.yml</include>
+					<include>**/*.yaml</include>
+					<include>**/*.properties</include>
+				</includes>
 			</resource>
 		</resources>
 
@@ -139,6 +144,11 @@
 			<testResource>
 				<directory>src/test/resources</directory>
 				<filtering>false</filtering>
+				<includes>
+					<include>**/*.yml</include>
+					<include>**/*.yaml</include>
+					<include>**/*.properties</include>
+				</includes>
 			</testResource>
 		</testResources>
 	</build>
