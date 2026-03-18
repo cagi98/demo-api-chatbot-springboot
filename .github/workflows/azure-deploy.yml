@@ -29,7 +29,7 @@ jobs:
 
       # 3. Exécuter les tests avec le profil test
       - name: Run Tests
-        run: mvn clean package -Ptest -Dspring.profiles.active=test
+        run: mvn clean package -Dspring.profiles.active=test
         env:
           TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
           TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
@@ -50,6 +50,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 80
           min-coverage-changed-files: 80
+
+      # On sauvegarde le JAR pour le stage suivant
+      - name: Upload Build Artifact (JAR)
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: target/*.jar
 
   # deploiement
   deploy:
