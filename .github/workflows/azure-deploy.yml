@@ -29,6 +29,22 @@ jobs:
           TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
           TEST_OLLAMA_URL: ${{ secrets.TEST_OLLAMA_URL }}
 
+      # 3.1. Couverture de test avec Jacoco
+      - name: Upload JaCoCo Report as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
+
+      - name: Add Coverage PR Comment
+        uses: madrapps/jacoco-report@v1.7.1 # Popular marketplace action
+        if: github.event_name == 'pull_request'
+        with:
+          paths: ${{ github.workspace }}/target/site/jacoco/jacoco.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 80
+          min-coverage-changed-files: 80
+
       # 4. Builder le projet
       - name: Build with Maven
         run: mvn clean package -DskipTests
